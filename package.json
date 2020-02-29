@@ -1,0 +1,23 @@
+{
+  "name": "marker",
+  "version": "0.0.1",
+  "description": "Markdown layer that builds on top of a parser for extra control",
+  "author": "PGilbertSchmitt@gmail.com",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "devDependencies": {
+    "@types/markdown-it": "^0.0.7",
+    "ts-node": "^8.2.0",
+    "typescript": "^3.4.5"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "build:watch": "tsc -p tsconfig.json --watch",
+    "try": "ts-node try.ts",
+    "gen": "ts-node generate.ts"
+  },
+  "dependencies": {
+    "markdown-it": "^8.4.2"
+  }
+}
