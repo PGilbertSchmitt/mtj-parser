@@ -56,7 +56,7 @@ export default class BaseParser extends Parser {
   private parseParagraph = (): Paragraph => {
     this.step();
     return {
-      type: BaseTypes.paragraph,
+      type:  BaseTypes.paragraph,
       parts: this.parseInlineToken(),
     };
   }
@@ -66,7 +66,7 @@ export default class BaseParser extends Parser {
     const size = this.curToken().markup.length as oneToSix;
     this.step();
     return {
-      type: BaseTypes.heading,
+      type:  BaseTypes.heading,
       parts: this.parseInlineToken(),
       size,
     };
@@ -76,9 +76,9 @@ export default class BaseParser extends Parser {
     const { content, info } = this.curToken();
     this.step();
     return {
-      type: BaseTypes.fence,
+      type:  BaseTypes.fence,
       value: content,
-      lang: info,
+      lang:  info,
     };
   }
 
@@ -105,15 +105,15 @@ export default class BaseParser extends Parser {
     const parts: ListItem = [];
     while (this.curToken().type !== TT.list_item_close) {
       switch (this.curToken().type) {
-        case TT.paragraph_open:
-          parts.push(this.parseParagraph());
-          break;
-        case TT.bullet_list_open:
-          parts.push(this.parseBulletList());
-          break;
-        case TT.ordered_list_open:
-          parts.push(this.parseOrderedList());
-          break;
+      case TT.paragraph_open:
+        parts.push(this.parseParagraph());
+        break;
+      case TT.bullet_list_open:
+        parts.push(this.parseBulletList());
+        break;
+      case TT.ordered_list_open:
+        parts.push(this.parseOrderedList());
+        break;
       }
     }
 
@@ -211,7 +211,7 @@ export default class BaseParser extends Parser {
     this.expect(TT.paragraph_open);
     this.step();
     const quote: Blockquote = {
-      type: BaseTypes.blockquote,
+      type:  BaseTypes.blockquote,
       parts: this.parseInlineToken(),
     };
     this.step();
@@ -220,24 +220,24 @@ export default class BaseParser extends Parser {
 
   private getBaseNodeParser = (tokenType: TT): BNP => {
     switch (tokenType) {
-      case TT.paragraph_open:
-        return this.parseParagraph;
-      case TT.heading_open:
-        return this.parseHeading;
-      case TT.hr:
-        return this.parseHorizontalRow;
-      case TT.bullet_list_open:
-        return this.parseBulletList;
-      case TT.ordered_list_open:
-        return this.parseOrderedList;
-      case TT.fence:
-        return this.parseFence;
-      case TT.table_open:
-        return this.parseTable;
-      case TT.blockquote_open:
-        return this.parseBlockquote;
-      default:
-        throw new Error(`No such parser for tokenType ${tokenType}`);
+    case TT.paragraph_open:
+      return this.parseParagraph;
+    case TT.heading_open:
+      return this.parseHeading;
+    case TT.hr:
+      return this.parseHorizontalRow;
+    case TT.bullet_list_open:
+      return this.parseBulletList;
+    case TT.ordered_list_open:
+      return this.parseOrderedList;
+    case TT.fence:
+      return this.parseFence;
+    case TT.table_open:
+      return this.parseTable;
+    case TT.blockquote_open:
+      return this.parseBlockquote;
+    default:
+      throw new Error(`No such parser for tokenType ${tokenType}`);
     }
   }
 

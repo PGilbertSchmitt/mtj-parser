@@ -30,7 +30,7 @@ export default class SubParser extends Parser {
     const { content } = this.curToken();
     this.step();
     return {
-      type: SubTypes.text,
+      type:  SubTypes.text,
       value: content,
     };
   }
@@ -39,7 +39,7 @@ export default class SubParser extends Parser {
     const { content } = this.curToken();
     this.step();
     return {
-      type: SubTypes.codeInline,
+      type:  SubTypes.codeInline,
       value: content,
     };
   }
@@ -61,7 +61,7 @@ export default class SubParser extends Parser {
   private parseEmphasis: SNP = (): Emphasis => {
     this.step();
     return {
-      type: SubTypes.emphasis,
+      type:  SubTypes.emphasis,
       parts: this.parseSection(TT.em_close),
     };
   }
@@ -69,7 +69,7 @@ export default class SubParser extends Parser {
   private parseStrong: SNP = (): Strong => {
     this.step();
     return {
-      type: SubTypes.strong,
+      type:  SubTypes.strong,
       parts: this.parseSection(TT.strong_close),
     };
   }
@@ -77,7 +77,7 @@ export default class SubParser extends Parser {
   private parseStrikethrough: SNP = (): Strikethrough => {
     this.step();
     return {
-      type: SubTypes.strikethrough,
+      type:  SubTypes.strikethrough,
       parts: this.parseSection(TT.s_close),
     };
   }
@@ -99,8 +99,8 @@ export default class SubParser extends Parser {
       src,
     };
 
-    if (!!title) { image.title = title; }
-    if (!!alt) { image.alt = alt; }
+    if (title) { image.title = title; }
+    if (alt) { image.alt = alt; }
 
     return image;
   }
@@ -123,7 +123,7 @@ export default class SubParser extends Parser {
       dest: href,
     };
 
-    if (!!title) {
+    if (title) {
       link.title = title;
     }
 
@@ -132,26 +132,26 @@ export default class SubParser extends Parser {
 
   private getSubNodeParser = (tokenType: TT): SNP => {
     switch (tokenType) {
-      case TT.text:
-        return this.parseText;
-      case TT.code_inline:
-        return this.parseCodeInline;
-      case TT.hardbreak:
-        return this.parseHardbreak;
-      case TT.softbreak:
-        return this.parseSoftBreak;
-      case TT.link_open:
-        return this.parseLink;
-      case TT.em_open:
-        return this.parseEmphasis;
-      case TT.strong_open:
-        return this.parseStrong;
-      case TT.s_open:
-        return this.parseStrikethrough;
-      case TT.image:
-        return this.parseImage;
-      default:
-        throw new Error(`No such parser for tokenType ${tokenType}`);
+    case TT.text:
+      return this.parseText;
+    case TT.code_inline:
+      return this.parseCodeInline;
+    case TT.hardbreak:
+      return this.parseHardbreak;
+    case TT.softbreak:
+      return this.parseSoftBreak;
+    case TT.link_open:
+      return this.parseLink;
+    case TT.em_open:
+      return this.parseEmphasis;
+    case TT.strong_open:
+      return this.parseStrong;
+    case TT.s_open:
+      return this.parseStrikethrough;
+    case TT.image:
+      return this.parseImage;
+    default:
+      throw new Error(`No such parser for tokenType ${tokenType}`);
     }
   }
 
