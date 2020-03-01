@@ -18,8 +18,7 @@ export default [
     } ]
   },
   {
-    input: `This is a paragraph
-with a softbreak with no spaces`,
+    input: 'This is a paragraph\nwith a softbreak with no spaces',
     expectation: [ {
       type: BaseTypes.paragraph,
       parts: [
@@ -38,8 +37,7 @@ with a softbreak with no spaces`,
     } ]
   },
   {
-    input: `This is a paragraph 
-with a softbreak with one space`,
+    input: 'This is a paragraph \nwith a softbreak with one space',
     expectation: [ {
       type: BaseTypes.paragraph,
       parts: [
@@ -58,8 +56,7 @@ with a softbreak with one space`,
     } ]
   },
   {
-    input: `This is a paragraph  
-with a hardbreak with two spaces`,
+    input: 'This is a paragraph  \nwith a hardbreak with two spaces',
     expectation: [ {
       type: BaseTypes.paragraph,
       parts: [

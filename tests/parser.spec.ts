@@ -6,6 +6,7 @@ import { Token } from '../src/token';
 import HeadingRubric from './heading.rubric';
 import HorizontalRowRubric from './horizontal_row.rubric';
 import ParagraphRubric from './paragraph.rubric';
+import FenceRubric from './fence.rubric';
 
 const lexer = markdownLexer();
 
@@ -21,6 +22,10 @@ const sections = [
   {
     section: 'paragraph',
     rubric: ParagraphRubric
+  },
+  {
+    section: 'fence',
+    rubric: FenceRubric
   }
 ];
 
