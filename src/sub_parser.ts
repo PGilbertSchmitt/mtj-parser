@@ -30,7 +30,7 @@ export default class SubParser extends Parser {
     const { content } = this.curToken();
     this.step();
     return {
-      type:  SubTypes.text,
+      type: SubTypes.text,
       value: content,
     };
   }
@@ -39,7 +39,7 @@ export default class SubParser extends Parser {
     const { content } = this.curToken();
     this.step();
     return {
-      type:  SubTypes.codeInline,
+      type: SubTypes.codeInline,
       value: content,
     };
   }
@@ -61,7 +61,7 @@ export default class SubParser extends Parser {
   private parseEmphasis: SNP = (): Emphasis => {
     this.step();
     return {
-      type:  SubTypes.emphasis,
+      type: SubTypes.emphasis,
       parts: this.parseSection(TT.em_close),
     };
   }
@@ -69,7 +69,7 @@ export default class SubParser extends Parser {
   private parseStrong: SNP = (): Strong => {
     this.step();
     return {
-      type:  SubTypes.strong,
+      type: SubTypes.strong,
       parts: this.parseSection(TT.strong_close),
     };
   }
@@ -77,7 +77,7 @@ export default class SubParser extends Parser {
   private parseStrikethrough: SNP = (): Strikethrough => {
     this.step();
     return {
-      type:  SubTypes.strikethrough,
+      type: SubTypes.strikethrough,
       parts: this.parseSection(TT.s_close),
     };
   }

@@ -56,7 +56,7 @@ export default class BaseParser extends Parser {
   private parseParagraph = (): Paragraph => {
     this.step();
     return {
-      type:  BaseTypes.paragraph,
+      type: BaseTypes.paragraph,
       parts: this.parseInlineToken(),
     };
   }
@@ -66,7 +66,7 @@ export default class BaseParser extends Parser {
     const size = this.curToken().markup.length as oneToSix;
     this.step();
     return {
-      type:  BaseTypes.heading,
+      type: BaseTypes.heading,
       parts: this.parseInlineToken(),
       size,
     };
@@ -76,9 +76,9 @@ export default class BaseParser extends Parser {
     const { content, info } = this.curToken();
     this.step();
     return {
-      type:  BaseTypes.fence,
+      type: BaseTypes.fence,
       value: content,
-      lang:  info,
+      lang: info,
     };
   }
 
@@ -211,7 +211,7 @@ export default class BaseParser extends Parser {
     this.expect(TT.paragraph_open);
     this.step();
     const quote: Blockquote = {
-      type:  BaseTypes.blockquote,
+      type: BaseTypes.blockquote,
       parts: this.parseInlineToken(),
     };
     this.step();
