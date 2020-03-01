@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "build:watch": "tsc -p tsconfig.json --watch",
-    "coverage": "nyc yarn test",
+    "coverage": "nyc yarn test --tap",
     "gen": "ts-node generate.ts",
     "test": "ava ./tests/*.spec.ts",
     "try": "ts-node try.ts"
