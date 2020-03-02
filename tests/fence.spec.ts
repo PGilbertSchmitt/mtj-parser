@@ -1,9 +1,9 @@
+import { buildTests } from './test_helpers';
 import {
   BaseTypes
 } from '../src/ast';
-import { TestPair } from './test_helpers';
 
-export default [
+buildTests('Fence', [
   {
     input: '```\n// This code block has no language\n// That means it\'s generic and unstyled\n```',
     expectation: [ {
@@ -57,4 +57,4 @@ puts fib(1000)
       lang: 'ruby'
     } ]
   }
-] as TestPair[];
+]);

@@ -1,10 +1,11 @@
+import { buildTests } from './test_helpers';
 import {
   BaseTypes,
   SubTypes
 } from '../src/ast';
-import { TestPair } from './test_helpers';
 
-export default [
+
+buildTests('Paragraph', [
   {
     input: 'This is a paragraph',
     expectation: [ {
@@ -132,5 +133,39 @@ export default [
         }
       ]
     } ]
+  },
+  {
+    input: 'This *paragraph has **nested** styles*',
+    expectation: [ {
+      type: BaseTypes.paragraph,
+      parts: [
+        {
+          type: SubTypes.text,
+          value: 'This '
+        },
+        {
+          type: SubTypes.emphasis,
+          parts: [
+            {
+              type: SubTypes.text,
+              value: 'paragraph has '
+            },
+            {
+              type: SubTypes.strong,
+              parts: [
+                {
+                  type: SubTypes.text,
+                  value: 'nested'
+                }
+              ]
+            },
+            {
+              type: SubTypes.text,
+              value: ' styles'
+            }
+          ]
+        }
+      ]
+    } ],
   }
-] as TestPair[];
+]);

@@ -1,9 +1,8 @@
-import {
+import { buildTests } from './test_helpers';import {
   BaseTypes
 } from '../src/ast';
-import { TestPair } from './test_helpers';
 
-export default [
+buildTests('Horizontal Row', [
   {
     input: '---',
     expectation: [ { type: BaseTypes.horizontalRow } ]
@@ -16,4 +15,4 @@ export default [
     input: '___',
     expectation: [ { type: BaseTypes.horizontalRow } ]
   }
-] as TestPair[];
+]);

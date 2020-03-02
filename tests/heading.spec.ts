@@ -1,10 +1,9 @@
-import {
+import { buildTests } from './test_helpers';import {
   BaseTypes,
   SubTypes
 } from '../src/ast';
-import { TestPair } from './test_helpers';
 
-export default [
+buildTests('Heading', [
   {
     input: '# This is an h1 header',
     expectation: [ {
@@ -53,4 +52,4 @@ export default [
       size: 6
     } ]
   },
-] as TestPair[];
+]);
