@@ -16,8 +16,8 @@ import {
   CodeInline,
 } from './ast';
 
-const getAttr = (token: Token, attrName: string) => {
-  const attrArray = token.attrs.find(attr => attr[0] === attrName) as string[];
+const getAttr = (token: Token, attrName: string): string | undefined => {
+  const attrArray = token.attrs && token.attrs.find(attr => attr[0] === attrName);
   return (attrArray || [])[1];
 };
 
@@ -94,6 +94,10 @@ export default class SubParser extends Parser {
     const title = getAttr(imageToken, 'title');
     const alt = getAttr(imageToken, 'alt');
 
+    if (!src) {
+      throw new Error(`Image doesn't have 'src' attr\n=>${JSON.stringify(imageToken)}`);
+    }
+
     const image: Image = {
       type: SubTypes.image,
       src,
@@ -117,6 +121,10 @@ export default class SubParser extends Parser {
     const title = getAttr(linkToken, 'title');
     const parts = this.parseSection(TT.link_close);
 
+    if (!href) {
+      throw new Error(`Link doesn't have 'href' attr\n=> ${JSON.stringify(linkToken)}`);
+    }
+    
     const link: Link = {
       type: SubTypes.link,
       parts,

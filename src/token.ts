@@ -45,7 +45,7 @@ export enum TokenType {
 export interface Token {
   type: TokenType;
   tag: string;
-  attrs: string[][];
+  attrs: string[][] | null;
   map: number[] | null;
   nesting: number;
   level: number;

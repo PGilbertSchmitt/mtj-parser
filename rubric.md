@@ -29,6 +29,8 @@ with a hardbreak with two spaces
 
 This is a text with an *italic style*, a **bold style**, a ~~strikethrough~~, and `inlined code`.
 
+This *paragraph has **nested** styles*
+
 ```
 // This code block has no language
 // That means it's generic and unstyled
@@ -75,10 +77,7 @@ This is a [reference link] using its own text as a reference
 
 [image reference]: https://upload.wikimedia.org/wikipedia/commons/5/5a/City_of_Rockhampton_train_%28Sunshine_railway_station%2C_Brisbane%29.jpg "Second title text"
 
-This *paragraph has **nested** styles*
-
 [This link has a **style** inside it](www.example.com)
-
 
 This paragraph has a ~~[**bold link**](www.example.com)~~ with a line through it
 

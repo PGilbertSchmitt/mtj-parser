@@ -191,7 +191,7 @@ export default class BaseParser extends Parser {
     let align: alignment;
     try {
       // A lot of trust in this next line
-      align = (attrs[0][1].split(':')[1] as alignment) || 'left';
+      align = (attrs && attrs[0][1].split(':')[1] as alignment) || 'left';
     } catch {
       align = 'left';
     }
