@@ -1,6 +1,6 @@
 {
-  "name": "marker",
-  "version": "0.0.1",
+  "name": "mtj-parser",
+  "version": "0.0.0",
   "description": "Markdown layer that builds on top of a parser for extra control",
   "author": "PGilbertSchmitt@gmail.com",
   "license": "MIT",
@@ -36,5 +36,9 @@
   "files": [
     "dist",
     "rubric.md"
-  ]
+  ],
+  "np": {
+    "yarn": false,
+    "access": "public"
+  }
 }
