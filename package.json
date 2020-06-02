@@ -1,6 +1,6 @@
 {
   "name": "mtj-parser",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Markdown layer that builds on top of a parser for extra control",
   "author": "PGilbertSchmitt@gmail.com",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "build": "tsc -p tsconfig.json",
     "build:watch": "tsc -p tsconfig.json --watch",
     "coverage": "nyc yarn test --tap",
-    "publish": "np",
+    "release": "np",
     "test": "ava ./tests/*.spec.ts"
   },
   "dependencies": {
