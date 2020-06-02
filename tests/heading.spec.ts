@@ -52,4 +52,32 @@ buildTests('Heading', [
       size: 6
     } ]
   },
+  {
+    input: '### This header has **internal styles** within it',
+    expectation: [
+      {
+        type: BaseTypes.heading,
+        parts: [
+          {
+            type: SubTypes.text,
+            value: 'This header has '
+          },
+          {
+            type: SubTypes.strong,
+            parts: [
+              {
+                type: SubTypes.text,
+                value: 'internal styles'
+              }
+            ]
+          },
+          {
+            type: SubTypes.text,
+            value: ' within it'
+          }
+        ],
+        size: 3
+      }
+    ]
+  }
 ]);

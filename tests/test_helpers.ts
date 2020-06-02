@@ -6,7 +6,7 @@ import { Token } from '../src/token';
 
 const lexer = markdownLexer();
 
-interface TestPair {
+export interface TestPair {
   input: string,
   expectation: MarkdownDoc
 }
