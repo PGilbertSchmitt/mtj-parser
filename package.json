@@ -10,9 +10,7 @@
     "build": "tsc -p tsconfig.json",
     "build:watch": "tsc -p tsconfig.json --watch",
     "coverage": "nyc yarn test --tap",
-    "gen": "ts-node generate.ts",
-    "test": "ava ./tests/*.spec.ts",
-    "try": "ts-node try.ts"
+    "test": "ava ./tests/*.spec.ts"
   },
   "dependencies": {
     "markdown-it": "^8.4.2"
@@ -34,5 +32,8 @@
     "require": [
       "ts-node/register"
     ]
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
