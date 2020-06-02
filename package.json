@@ -10,6 +10,7 @@
     "build": "tsc -p tsconfig.json",
     "build:watch": "tsc -p tsconfig.json --watch",
     "coverage": "nyc yarn test --tap",
+    "publish": "np",
     "test": "ava ./tests/*.spec.ts"
   },
   "dependencies": {
@@ -21,6 +22,7 @@
     "@typescript-eslint/parser": "^2.21.0",
     "ava": "^3.4.0",
     "eslint": "^6.8.0",
+    "np": "^6.2.3",
     "nyc": "^15.0.0",
     "ts-node": "^8.2.0",
     "typescript": "^3.4.5"
