@@ -4,7 +4,7 @@
   "description": "Markdown layer that builds on top of a parser for extra control",
   "author": "PGilbertSchmitt@gmail.com",
   "license": "MIT",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc -p tsconfig.json",
@@ -34,6 +34,7 @@
     ]
   },
   "files": [
-    "dist"
+    "dist",
+    "rubric.md"
   ]
 }

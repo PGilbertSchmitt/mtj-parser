@@ -7,3 +7,5 @@ Parsers already exist aplenty for transforming Markdown into HTML. However, I do
 I CAN'T HEAR YOU LALALALA
 
 The output is something that I can more easily manipulate, which makes me happier. Also, I'm learning, and at the end of the day, isn't that all that matters?
+
+The [rubric file](./rubric.md) shows all the currently supported Markdown formatting.
