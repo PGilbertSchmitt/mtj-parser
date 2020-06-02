@@ -43,16 +43,16 @@ const y = 'Hello mom!';
 
 ```ruby
 # Something more complicated to ensure formatting stays consistent
+
 def fib(places)
+   a = 0
+   b = 1
 
-     a = 0
-     b = 1
-
-     while a < places do
-          puts a + "\n"
-          a = b
-          b = a + b
-     end
+   while a < places do
+      puts a + "\n"
+      a = b
+      b = a + b
+   end
 end
 
 puts fib(1000)

@@ -38,7 +38,8 @@
     "rubric.md"
   ],
   "np": {
-    "yarn": false,
-    "access": "public"
+    "access": "public",
+    "cleanup": false,
+    "yarn": false
   }
 }
