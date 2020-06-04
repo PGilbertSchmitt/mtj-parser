@@ -1,6 +1,6 @@
 {
   "name": "mtj-parser",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Markdown layer that builds on top of a parser for extra control",
   "author": "PGilbertSchmitt@gmail.com",
   "license": "MIT",
