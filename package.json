@@ -47,6 +47,7 @@
   "np": {
     "access": "public",
     "cleanup": false,
+    "tests": false,
     "yarn": false
   }
 }
