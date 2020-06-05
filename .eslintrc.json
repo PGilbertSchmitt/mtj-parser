@@ -6,6 +6,7 @@
   },
   "extends": [
     "eslint:recommended",
+    "prettier",
     "plugin:@typescript-eslint/eslint-recommended"
   ],
   "globals": {
@@ -37,7 +38,7 @@
       "error",
       "always"
     ],
-    "object-curly-spacing": [
+    "eqeqeq": [
       "error",
       "always"
     ],
@@ -45,15 +46,13 @@
       "error",
       "always"
     ],
-    "key-spacing": [
+    "object-curly-spacing": [
       "error",
-      {
-        "mode": "strict"
-      }
+      "always"
     ],
-    "@typescript-eslint/no-unused-vars": "error",
-    "@typescript-eslint/no-use-before-define": "error",
+    "space-in-parens": "error",
+    "func-call-spacing": "error",
     "@typescript-eslint/type-annotation-spacing": "error",
-    "@typescript-eslint/no-explicit-any": "error"
+    "@typescript-eslint/no-unused-vars": "error"
   }
 }
