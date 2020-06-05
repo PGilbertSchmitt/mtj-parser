@@ -1,4 +1,5 @@
-import { buildTests } from './test_helpers';import {
+import { buildTests } from './test_helpers';
+import {
   BaseTypes
 } from '../src/ast';
 
