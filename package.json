@@ -15,7 +15,7 @@
     "build": "tsc -p tsconfig.json",
     "build:watch": "tsc -p tsconfig.json --watch",
     "coverage": "nyc yarn test --tap",
-    "release": "np",
+    "release": "npm run build && npm run coverage && np",
     "test": "ava ./tests/*.spec.ts"
   },
   "dependencies": {

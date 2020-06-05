@@ -8,6 +8,10 @@ The output is something that I can more easily manipulate, which makes me happie
 
 The [rubric file](./rubric.md) shows all the currently supported Markdown formatting.
 
+### ToDo
+
+[ ] - 100% test coverage
+
 ### Install
 
 `npm install mtj-parser`
