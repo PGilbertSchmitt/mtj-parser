@@ -208,13 +208,18 @@ export default class BaseParser extends Parser {
 
   private parseBlockquote = (): Blockquote => {
     this.step();
-    this.expect(TT.paragraph_open);
-    this.step();
+
     const quote: Blockquote = {
       type: BaseTypes.blockquote,
-      parts: this.parseInlineToken(),
+      parts: [],
     };
+
+    while (this.curToken().type !== TT.blockquote_close) {
+      const node = this.getBaseNodeParser(this.curToken().type)();
+      quote.parts.push(node);
+    }
     this.step();
+
     return quote;
   }
 

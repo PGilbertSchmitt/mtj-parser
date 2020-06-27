@@ -86,7 +86,7 @@ export interface BulletList {
 
 export interface Blockquote {
   type: BaseTypes.blockquote;
-  parts: InlineSection;
+  parts: BaseNode[];
 }
 
 export type alignment = 'left' | 'center' | 'right';

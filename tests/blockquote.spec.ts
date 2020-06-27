@@ -12,21 +12,66 @@ buildTests('Blockquote', [
         type: BaseTypes.blockquote,
         parts: [
           {
-            type: SubTypes.text,
-            value: 'This is a block quote with '
-          },
-          {
-            type: SubTypes.strong,
+            type: BaseTypes.paragraph,
             parts: [
               {
                 type: SubTypes.text,
-                value: 'internal styles'
+                value: 'This is a block quote with '
+              },
+              {
+                type: SubTypes.strong,
+                parts: [
+                  {
+                    type: SubTypes.text,
+                    value: 'internal styles'
+                  }
+                ]
+              },
+              {
+                type: SubTypes.text,
+                value: '.'
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    input: `
+> First line
+> Second line
+>
+> Third line
+    `,
+    expectation: [
+      {
+        type: BaseTypes.blockquote,
+        parts: [
+          {
+            type: BaseTypes.paragraph,
+            parts: [
+              {
+                type: SubTypes.text,
+                value: 'First line'
+              },
+              {
+                type: SubTypes.softbreak
+              },
+              {
+                type: SubTypes.text,
+                value: 'Second line'
               }
             ]
           },
           {
-            type: SubTypes.text,
-            value: '.'
+            type: BaseTypes.paragraph,
+            parts: [
+              {
+                type: SubTypes.text,
+                value: 'Third line'
+              }
+            ]
           }
         ]
       }
