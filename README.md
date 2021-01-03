@@ -1,4 +1,4 @@
-# MTF-Parser
+# MTJ-Parser
 ## The Markdown-to-JSON Parser
 ---
 
@@ -60,7 +60,7 @@ const mdObject = parseMarkdown(mdString);
 
 Being written in TypeScript means that there are types available for the different node types, and can be imported from the index of the library along with the `parseMarkdown` function.
 
-The nodes are split into two categories: `BaseNodes` and `SubNodes`. The root of the object is a `MarkdownDoc`, which is just an array of `BaseNodes`. `BaseNodes` are the overall structure of a top-level Markdown element. Most `BaseNodes` contain `SubNodes`, which are the text styling and control elements.
+The nodes are split into two categories: `BaseNodes` and `SubNodes`. The root of the object is a `MarkdownDoc`, which is just an array of `BaseNodes`. `BaseNodes` are the top-level Markdown elements (paragraph, lists, etc). Most `BaseNodes` contain `SubNodes`, which are the text styling and control elements (bold, images, breaks, etc).
 
 #### MarkdownDoc
 Returned from `parseMarkdown(str)`
